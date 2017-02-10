@@ -39,7 +39,9 @@ void loop()
   Serial.println();
 
     // Printing data to serial bluetooth (bt)
-  bt.print(String(temp) + "," + String(humi));
+  bt.print(String(temp));
+  bt.print("\n");
+  bt.print(String(humi));
   bt.print("\n");
 
   delay(DHT11_RETRY_DELAY); //delay for reread
@@ -51,9 +53,8 @@ void loop()
   Serial.print(error);
   Serial.println();    
   }
-}
+  
 
-/*
 if(bt.available())  // If the bluetooth sent any characters
   {
     // Send any characters the bluetooth prints to the serial monitor
@@ -65,8 +66,10 @@ if(bt.available())  // If the bluetooth sent any characters
     bt.print((char)Serial.read());
   }
   // and loop forever and ever!
+
+  
 }
-*/
+
 
 
 
