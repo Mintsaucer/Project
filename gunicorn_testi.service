@@ -1,0 +1,10 @@
+[Unit]
+Description=Testi gunicorn daemon
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/home/pi/servu/gunicorn_start.sh
+
+[Install]
+WantedBy=multi-user.target

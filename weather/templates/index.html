@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Langattoman linux-sovelluksen suunnitelu TVT15SPO</h1>
+
+<style>
+   table {text-align: center;}
+   table, th, td {border: 1px solid blue;}
+   th, td {padding: 10px;}
+</style>
+
+<table>
+  {% for Weathers in weather %}
+  <tr>
+    <th>Lämpötila:</th>  
+    <th>Kosteus:</th>  
+    <th>Päivämäärä:</th>
+  </tr>
+  <tr>
+    <td>{{ Weathers.temp }}</td>
+    <td>{{ Weathers.hum }}</td>
+    <td>{{ Weathers.date }}</td>
+  </tr>  
+  {% endfor %}
+</table>
+
+	<footer>
+		<p>Tämä on Oulun Ammattikorkeakoulun tieto- ja viestintätekniikan koulutusohjelman toisen vuosikurssin Langattoman linuxsovelluksen suunnittelukurssin ohjelmointiprojekti.
+		 Projektin toteutuksessa Arduino Uno -mikrokontrolleri mittaa kosteutta ja lämpötilaa sensorin avulla. Arvot siirretään bluetoothin avulla Raspberry Pi -pienoistietokoneelle,
+		 joka siirtää ne tietokantaan tälle palvelimelle. Tältä sivulta voit seurata tämän sääaseman antamaa dataa.</p>
+		<h2>Ryhmä 4: Tuomas Isokoski, Valtteri Juutilainen, Lauri Koskinen</h2>
+		<p>OAMK 2017</p>
+	</footer>
+
+{% endblock %}
